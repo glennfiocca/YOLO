@@ -16,16 +16,19 @@ import csv
 import json
 import re
 import socket
+import sys
 import time
 import urllib.error
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
-from typing import Optional
+from typing import Iterator, Optional
 from urllib.parse import urlparse, parse_qs
 
 import openpyxl
 
+# INPUT can be a single file (.xlsx or .csv) OR a directory containing
+# multiple chunks. Override at the CLI: `python3 extract_slugs.py <path>`.
 INPUT_PATH = "/Users/glennfiocca/Desktop/Known Jobs.xlsx"
 OUT_DIR = Path("/Users/glennfiocca/Desktop")
 GH_API = "https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=false"
@@ -124,12 +127,64 @@ def probe_ashby(slug: str) -> tuple[int, Optional[int]]:
     return _probe(ASHBY_API.format(slug=slug), "jobs")
 
 
+REQUIRED_COLUMNS = ["url", "company_name", "job_country_code"]
+
+
+def discover_input_files(path: str) -> list[Path]:
+    """Resolve INPUT_PATH to a list of files. Accepts a single file or a directory."""
+    p = Path(path)
+    if p.is_file():
+        return [p]
+    if p.is_dir():
+        files = sorted(
+            [f for f in p.iterdir()
+             if f.is_file() and f.suffix.lower() in (".xlsx", ".csv")]
+        )
+        if not files:
+            raise SystemExit(f"No .xlsx/.csv files found in directory: {path}")
+        return files
+    raise SystemExit(f"Input path not found: {path}")
+
+
+def iter_rows_from_file(path: Path) -> Iterator[tuple[dict, list]]:
+    """
+    Yield (headers_idx_map, row_values) tuples for each data row in the file.
+    Supports .xlsx and .csv. Caller does not need to know which.
+    """
+    if path.suffix.lower() == ".xlsx":
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        ws = wb.active
+        rows_iter = ws.iter_rows(values_only=True)
+        headers = next(rows_iter)
+        idx = {h: i for i, h in enumerate(headers) if h is not None}
+        for r in rows_iter:
+            if r is None or all(v is None for v in r):
+                continue
+            yield idx, list(r)
+        wb.close()
+        return
+    if path.suffix.lower() == ".csv":
+        # newline="" so csv handles embedded newlines in quoted fields correctly.
+        with path.open("r", newline="", encoding="utf-8-sig") as f:
+            reader = csv.reader(f)
+            headers = next(reader)
+            idx = {h: i for i, h in enumerate(headers)}
+            for r in reader:
+                if not r or all(v == "" for v in r):
+                    continue
+                yield idx, r
+        return
+    raise SystemExit(f"Unsupported file extension: {path}")
+
+
 def main() -> int:
-    wb = openpyxl.load_workbook(INPUT_PATH, read_only=True, data_only=True)
-    ws = wb.active
-    rows_iter = ws.iter_rows(values_only=True)
-    headers = next(rows_iter)
-    idx = {h: i for i, h in enumerate(headers)}
+    input_path = sys.argv[1] if len(sys.argv) > 1 else INPUT_PATH
+    files = discover_input_files(input_path)
+    print(f"Input: {input_path}")
+    print(f"Found {len(files)} file(s) to process:")
+    for f in files:
+        print(f"  - {f.name}")
+    print()
 
     # Per ATS: slug -> {companies, countries, sample_url, job_count}
     slugs: dict[tuple[str, str], dict] = {}
@@ -145,76 +200,86 @@ def main() -> int:
     # Defer grnh.se resolution until after the first pass.
     grnh_urls: list[tuple[str, str, str]] = []  # (short_url, company, country)
 
-    for r in rows_iter:
-        total_rows += 1
-        url = r[idx["url"]]
-        company = r[idx["company_name"]]
-        country = r[idx["job_country_code"]]
-        if not url:
-            rows_no_url += 1
-            continue
-        try:
-            p = urlparse(url)
-            host = (p.hostname or "").lower()
-            qs = parse_qs(p.query or "")
-        except Exception:
-            ats_counter["_unknown"] += 1
-            continue
+    for file_path in files:
+        file_rows = 0
+        for idx, r in iter_rows_from_file(file_path):
+            total_rows += 1
+            file_rows += 1
+            # Required columns must be present in the header; missing → skip with hint.
+            missing = [c for c in REQUIRED_COLUMNS if c not in idx]
+            if missing:
+                raise SystemExit(
+                    f"{file_path.name}: missing required columns: {missing}. "
+                    f"Available: {sorted(idx.keys())}"
+                )
+            url = r[idx["url"]] if idx["url"] < len(r) else None
+            company = r[idx["company_name"]] if idx["company_name"] < len(r) else None
+            country = r[idx["job_country_code"]] if idx["job_country_code"] < len(r) else None
+            if not url:
+                rows_no_url += 1
+                continue
+            try:
+                p = urlparse(url)
+                host = (p.hostname or "").lower()
+                qs = parse_qs(p.query or "")
+            except Exception:
+                ats_counter["_unknown"] += 1
+                continue
 
-        if host == "grnh.se":
-            grnh_urls.append((url, company, country))
-            ats_counter["greenhouse_shortlink"] += 1
-            continue
+            if host == "grnh.se":
+                grnh_urls.append((url, company, country))
+                ats_counter["greenhouse_shortlink"] += 1
+                continue
 
-        ats, slug = classify_url(url)
-        if not ats:
-            # Soft signals: ATS tracker params in query string.
-            #   gh_jid / gh_src               -> Greenhouse-backed self-hoster
-            #   ashby_jid / ashby_embed_*     -> Ashby-backed self-hoster
-            param_ats: Optional[str] = None
-            if "gh_jid" in qs or "gh_src" in qs:
-                param_ats = "greenhouse"
-            elif "ashby_jid" in qs or any(k.startswith("ashby_embed") for k in qs):
-                param_ats = "ashby"
-            if param_ats:
-                key = (param_ats, company or "?")
-                entry = param_only_companies.setdefault(key, {
-                    "ats": param_ats, "company": company, "rows": 0,
-                    "countries": set(), "sample_url": url,
-                })
-                entry["rows"] += 1
+            ats, slug = classify_url(url)
+            if not ats:
+                # Soft signals: ATS tracker params in query string.
+                #   gh_jid / gh_src               -> Greenhouse-backed self-hoster
+                #   ashby_jid / ashby_embed_*     -> Ashby-backed self-hoster
+                param_ats: Optional[str] = None
+                if "gh_jid" in qs or "gh_src" in qs:
+                    param_ats = "greenhouse"
+                elif "ashby_jid" in qs or any(k.startswith("ashby_embed") for k in qs):
+                    param_ats = "ashby"
+                if param_ats:
+                    key = (param_ats, company or "?")
+                    entry = param_only_companies.setdefault(key, {
+                        "ats": param_ats, "company": company, "rows": 0,
+                        "countries": set(), "sample_url": url,
+                    })
+                    entry["rows"] += 1
+                    if country:
+                        entry["countries"].add(country)
+                    ats_counter[f"{param_ats}_param_only"] += 1
+                    continue
+                unknown_hosts[host] += 1
+                unknown_sample.setdefault(host, url)
+                ats_counter["_unknown"] += 1
+                continue
+            ats_counter[ats] += 1
+            if not slug:
+                continue
+            key = (ats, slug)
+            entry = slugs.get(key)
+            if entry is None:
+                slugs[key] = {
+                    "ats": ats,
+                    "slug": slug,
+                    "companies": {company} if company else set(),
+                    "countries": {country} if country else set(),
+                    "sample_url": url,
+                    "job_rows": 1,
+                }
+            else:
+                if company:
+                    entry["companies"].add(company)
                 if country:
                     entry["countries"].add(country)
-                ats_counter[f"{param_ats}_param_only"] += 1
-                continue
-            unknown_hosts[host] += 1
-            unknown_sample.setdefault(host, url)
-            ats_counter["_unknown"] += 1
-            continue
-        ats_counter[ats] += 1
-        if not slug:
-            continue
-        key = (ats, slug)
-        company = r[idx["company_name"]]
-        country = r[idx["job_country_code"]]
-        entry = slugs.get(key)
-        if entry is None:
-            slugs[key] = {
-                "ats": ats,
-                "slug": slug,
-                "companies": {company} if company else set(),
-                "countries": {country} if country else set(),
-                "sample_url": url,
-                "job_rows": 1,
-            }
-        else:
-            if company:
-                entry["companies"].add(company)
-            if country:
-                entry["countries"].add(country)
-            entry["job_rows"] += 1
+                entry["job_rows"] += 1
+        print(f"  - {file_path.name}: {file_rows} rows")
 
-    print(f"Processed {total_rows} job rows ({rows_no_url} had no URL)")
+    print()
+    print(f"Processed {total_rows} job rows across {len(files)} file(s) ({rows_no_url} had no URL)")
     print()
     print("=== ATS breakdown (rows) ===")
     for ats, n in sorted(ats_counter.items(), key=lambda x: -x[1]):

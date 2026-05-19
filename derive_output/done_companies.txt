@@ -1,0 +1,991 @@
+Varsity Tutors, a Nerdy Company
+BAYADA Home Health Care
+Agoda
+Lakefield Veterinary Group
+SpaceX
+Mercor
+Asset Living
+Carvana
+Canonical
+Shopee
+PandoLogic
+TEKsystems
+EY
+Okta
+HelloFresh
+Agoda
+KFC
+DoorDash
+Kuehne+Nagel
+Anduril Industries
+Databricks
+Lucid Motors
+Compass Group
+Mondelēz International
+Cloudflare
+DoorDash
+MongoDB
+Twilio
+Coinbase
+Meridial Marketplace, by Invisible
+Pure Storage
+Celonis
+Engie
+Samsara
+Datadog
+Affirm
+Airbnb
+Axon
+Coupang
+Afterpay
+Esri
+Warby Parker
+Elastic
+Dexian
+Gallagher
+Ambiq
+Riot Games
+Deel
+CLEAR
+Pinterest
+Olsson
+WPP Media
+OpenAI
+Zscaler
+Klaviyo
+Lyft
+EquipmentShare
+SharkNinja
+OKX
+Theoria Medical
+Robinhood
+Curaleaf
+Chewy
+GitLab
+Box
+Relativity Space
+Verkada
+Centria Autism
+Confluent
+Outlier AI
+Anthropic
+Toast
+FanDuel
+New Relic
+Epic Games
+SoFi
+Iron Mountain
+Block
+Anaplan
+Netskope
+ALO
+HubSpot
+Fever
+Rivian Automotive
+TEGNA
+Jerry
+Grafana Labs
+UiPath
+Natera
+Vonage
+KnowBe4
+Luminis Health
+ACCEL Schools
+Precision Medicine Group
+Braze
+Inizio Engage
+Roblox
+Smartsheet
+GoDaddy
+Gusto
+Asana
+Motive
+CoreWeave
+VML
+Boston Consulting Group (BCG)
+Vivian Health
+Scale AI
+Encora
+PlayStation
+Flexport
+Fivetran
+Formlabs
+Cision
+SentinelOne
+Instacart
+Veeam Software
+CloudKitchens
+Kaseya
+Taboola
+Presence
+Pyramid Healthcare
+Spring Health
+Squarespace
+Orion Innovation
+Remote
+Charlie Health
+Cortland
+Ivanti
+Bozzuto
+DigitalOcean
+Zynga
+Heartland Veterinary Partners
+Workato
+Datavant
+Oldcastle BuildingEnvelope
+Tanium
+Neoris
+City of Fort Worth
+One Medical
+Lime
+SpotOn
+NICE
+Cortica
+Ripple
+Jerry
+ZoomInfo
+Guidepost Montessori
+Vacasa
+Horace Mann
+PetVet Care Centers
+Appian
+Monster Energy
+Ramp
+2K
+Cresco Labs
+Xometry
+Angi
+Intercom
+IPG Mediabrands
+Kraken
+Amplitude
+Applied Intuition
+AvePoint
+Rocket Lab USA
+Dillard's, Inc.
+Tripadvisor
+Empower Pharmacy
+ANSER
+Rockstar Games
+Figma
+NiCE
+The Trade Desk
+Roku
+Woolpert
+BILL
+Hitachi Vantara
+WelbeHealth
+Wiz
+OneTrust
+SMX
+DLR Group
+Postman
+Turing
+Justworks
+Trusted Health
+Crunchyroll
+Speechify
+Renuity
+Carta
+Notion
+Dataiku
+FeverUp
+Diligent
+Fastly
+Plaid
+Upstart
+Homebase
+Discord
+PagerDuty
+Ethos
+Sony Interactive Entertainment
+Chime
+Twitch
+Addepar
+xAI
+Scopely
+OpenTable
+Navan
+Whatnot
+Gong
+Cash App
+Talkdesk
+Michels
+Walden Security
+Recorded Future
+Grammarly
+Annalect
+AlphaSense
+Form Energy
+Udemy
+Tipalti
+NEORIS
+Motional
+Commvault
+Faire
+Compass
+Enviva
+VitalCaring Group
+SmartBear
+Apex Companies, LLC
+Directive
+Ensono
+Red Ventures
+StubHub
+VEG ER for Pets
+Oscar Health
+Headway
+Payoneer
+Algolia
+Pearce Services
+Ping Identity
+Handshake
+Reddit, Inc.
+Square
+Instructure
+Sotheby's
+Five9
+2U
+Dialpad
+Zuora
+Leap
+Hinge Health
+DoubleVerify
+Two Six Technologies
+Teads
+Sumo Logic
+Otterbein SeniorLife
+Flock Safety
+OneOncology
+Skydio
+10x Genomics
+West Monroe
+Exadel
+BeyondTrust
+SimilarWeb
+Lincoln Property Company
+IXL Learning
+SolarWinds
+Crusoe
+Preply
+Amyris
+SurveyMonkey
+PetVet Care Centers
+Sony Music Entertainment
+Affinity
+Rocket Lab
+Gemini
+GuidePoint Security
+Archer
+Abnormal Security
+JFrog
+Aura
+Real Chemistry
+Collibra
+Zeta Global
+Brex
+Ennoble Care
+Neo4j
+AppDirect
+Michels Corporation
+Keeper Security, Inc.
+Bond Vet
+ClickUp
+Zipline
+VaynerMedia
+The Knot Worldwide
+ID.me
+DigiCert
+Vast
+Glean
+CannonDesign
+Cribl
+SecurityScorecard
+Convera
+MaintainX
+Airtable
+Alarm.com
+Hitachi Digital Services
+Challenge Manufacturing
+DRW
+Miro
+Vanta
+StockX
+Astranis
+Yext
+Thoughtworks
+hims & hers
+CarGurus
+Quince
+Stitch Fix
+Via
+Axiom
+OpenGov
+HYR Global Source Inc
+LaunchDarkly
+Scribd, Inc.
+Legend Biotech
+Mozilla
+Podium
+Re:Build Manufacturing
+Coursera
+Eliot Community Human Services
+NeuraFlash
+project44
+Uber Freight
+Hasbro
+KAYAK
+Checkr
+Wilson Elser
+Aurora
+Ruby Labs
+Couchbase
+The New York Times
+Duolingo
+Marqeta
+Weber Shandwick
+Shift4
+OPSWAT
+Tenable
+Figure
+Credible
+Delinea
+Hudl
+Ubiquity
+Realtor.com
+iHerb
+Aspire Living & Learning
+Thumbtack
+Acquia
+ChargePoint
+The Scion Group
+EyeCare Partners
+EvenUp
+Fivetran
+Benesch
+Housecall Pro
+Webflow
+Global Atlantic Financial Group
+Tlingit Haida Tribal Business Corporation
+Mercury
+Industrious
+Nintendo
+Wellhub
+Hawthorne Residential Partners
+Berkadia
+FanDuel
+BitGo
+Modern Animal
+Encora Inc.
+Upstream Rehabilitation
+Sigma Computing
+AlixPartners
+BetterUp
+Green Thumb Industries (GTI)
+Illumio
+dbt Labs
+MKS2 Technologies
+Morgan & Morgan, P.A.
+SonicWall
+A Place for Mom
+GeneDx
+Aurora Innovation
+Revlon
+Sono Bello
+NEORIS
+Grow Therapy
+Zinnia
+Home Chef
+Iterable
+Maven Clinic
+Talkiatry
+Poshmark
+Specialty1 Partners
+Syska Hennessy Group
+PubMatic
+Interactive Brokers
+Sweetgreen
+6sense
+Bloomreach
+Harvey
+Human Interest
+Boomi
+Credit Karma
+LG Electronics North America
+HealthVerity
+Octagon
+Guidepoint
+Rula
+Trace3
+Forter
+Togetherwork
+Mapbox
+AuditBoard
+Strava
+Lambda
+Scout Motors Inc.
+Moloco
+Perk
+DailyPay Inc
+Apollo.io
+Cognite
+Inovalon
+TechnologyAdvice
+Chainalysis
+PharmaCann
+Sonic
+Foundation Academies
+Commure
+The United Firm | La Liga Defensora, APC
+Twist Bioscience
+National Life Group
+Precision for Medicine
+PMG
+Point72
+Comprehensive Mobile Care
+Patreon
+Townsquare Media
+Rent the Runway
+Axle
+C3 AI
+Astranis Space Technologies
+STR
+Truelogic Software
+G2
+PLACE
+Verra Mobility
+Redwood Materials
+Abridge
+ENSCO, Inc.
+Astera Labs
+ConvenientMD
+Collective Health
+AppLovin
+Similarweb
+Silvus Technologies
+Fictiv
+Fireblocks
+Wrike
+Udacity
+ePlus inc.
+Chainguard
+Group14 Technologies
+Landor
+SageSure
+The Farmer's Dog
+Convene
+Gorgias
+Club Monaco
+LogicMonitor
+Hadrian
+Accenture Federal Services
+AEG
+CareerVillage.org
+GI Alliance
+Vercel
+Loenbro
+Buckner International
+Compass Health Center
+Hibu
+Enova International
+Aviation Institute of Maintenance
+Allbirds
+Alma
+DATAIKU
+SmithRx
+Socure
+YipitData
+Narvar
+DH Pace Company, Inc.
+Effective School Solutions
+Vox Media
+Nuro
+Faherty Brand
+Konrad Group
+Nex
+Barbaricum
+PitchBook
+Teneo
+HackerOne
+BGE, Inc.
+RAPP
+Jensen Hughes
+Eating Recovery Center
+Major League Baseball
+Industrial Electric Mfg. (IEM)
+MiQ Digital
+HP Hood
+EarnIn
+Tonal
+ALTEN Technology USA
+Fashion Nova
+Mindbody
+Writer
+Cerebral
+Beyond Finance
+PLS Financial Services, Inc.
+Holder Construction
+ŌURA
+Wikimedia Foundation
+Upward Health
+Sigma
+Brilliant Earth
+Olympus Property
+Nexus
+Ironclad
+AKQA
+Triumvirate Environmental
+Percona
+DoiT
+Kin Insurance
+Teleport
+Benchling
+G2i Inc.
+Mixpanel
+Lucid Software
+Comstock Companies
+PandaDoc
+Mission Healthcare
+Axsome Therapeutics, Inc.
+BetterHelp
+Clarity Innovations, LLC
+Movable Ink
+TRM Labs
+Garner Health
+Coupang
+Cohere Health
+Tubi
+Athelas
+Omada Health
+The Skin Clique
+Life360
+Flywheel
+Corcept Therapeutics
+Roofstock
+BambooHR
+Care Access
+Terran Orbital
+Away
+ICON
+Metropolis
+Align
+Hourglass Cosmetics
+GoFundMe
+Zenoti
+BillionToOne
+Innodata Inc.
+Weee!
+SanMar
+Scribd
+Torc Robotics
+Kelso Industries
+Envoy
+Superhuman
+Amwell
+Take-Two Interactive Software, Inc.
+OpenGov Inc.
+Etched
+Crestwood Behavioral Health
+Hunter Douglas
+EDB
+Vail Health
+Mercer Advisors
+Degreed
+BenchMark Physical Therapy
+Avetta
+Bandwidth
+AKS Engineering & Forestry
+Zocdoc
+Radiant
+FLASH
+Blink Health
+BridgeBio
+Headspace
+New Story Schools
+Apex Companies
+ClassPass
+MeridianLink
+Hydrite
+Komodo Health
+iCapital
+SingleStore
+EnCharge AI
+Weedmaps
+IMA Financial Group, Inc.
+Druva
+Bethesda Health Group
+Checkr, Inc.
+Civil Science
+MetroStar
+Varsity Tutors
+Instawork
+MidPen Housing Corporation
+Bottomline
+Golin
+Planet
+Chainlink Labs
+Traba
+Rocket Lawyer
+Charles River Associates
+Verista
+Everlaw
+The Emily Program
+Flagship Pioneering
+BrainStation
+Flex
+Peloton Interactive
+Semperis
+PAR Technology
+Honor
+Salsify
+BigID
+NinjaTrader
+Sandstone Care
+Netcracker Technology
+Demandbase
+Sezzle
+BuzzFeed
+Gotion Inc.
+Strive Health
+Auctane
+10Pearls
+Cresta
+Galileo Financial Technologies
+Galaxy
+Storable
+Freeform
+Juniper Square
+CookUnity
+Withum
+HackerRank
+The Oncology Institute of Hope and Innovation
+Fresh Prints
+CityVet
+Wizeline
+WorldQuant
+Nextiva
+Nintex
+True Anomaly
+AppsFlyer
+Nava
+Ruggable
+ClinChoice
+Nextdoor
+ClickHouse
+RVO Health
+Jumio
+CircleCI
+Omnicom Health
+C.A. Fortune
+Flagler Health+
+Docker, Inc
+Hillpointe
+Hudson River Trading
+AXS
+Virta Health
+EPIC Insurance Brokers & Consultants
+Front
+OEC Group
+EliseAI
+Current
+Pendo.io
+Shields Health Solutions
+Zip
+ezCater
+Rho
+Payscale
+Mochi Health
+Snorkel AI
+Neuralink
+ShipBob
+Wing
+Playfly Sports
+Atwell, LLC
+Caddell Construction
+Compeer Financial
+Arcesium
+Instabase
+Democracy Prep Public Schools
+Raft
+Azurity Pharmaceuticals
+Sensor Tower
+eClinical Solutions, LLC
+Fairstead
+ConnectWise
+Magic Leap
+Schrödinger
+Redis
+Kargo
+Precision AQ
+National Football League
+Axios
+Diligent Corporation
+Lumos Fiber
+Perplexity
+The Pokémon Company International
+SimpliSafe
+GHX
+WorldStrides
+Kong
+OpenTable
+Nexxen
+Vectra AI
+Tecovas
+Tower Research Capital
+Muller, Inc.
+Mitratech
+Habitat Health
+Clear Street
+Thompson Thrift
+impact.com
+Spaulding Ridge
+Lighthouse
+Prenuvo
+Galileo
+NewGlobe
+Later
+Foundation Risk Partners
+Betterment
+Starburst
+Cockroach Labs
+Torq
+HomeLight
+House Buyers of America
+Gallup
+Energy Solutions
+Mad City Windows & Baths
+gorjana
+Netradyne
+Signifyd
+Conga
+Success Academy Charter Schools
+Foursquare
+Riveron
+MERGE
+Dark Wolf Solutions
+MURAL
+PLS
+Yotpo
+Babylist
+Hazel Health
+MG Properties
+Corelight
+Via Transportation
+Helping Hands Family
+HighRadius
+Nasuni
+National Football League (NFL)
+Intelligent Technical Solutions
+Buyers Edge Platform
+Air Apps
+Aviatrix
+Sprinter Health
+Constant Contact
+Telnyx
+Modus Create
+Pathward
+Wizeline
+Mattermost
+Perry Ellis International, Inc.
+GOAT Group
+Fender Musical Instruments Corporation
+Mission Lane
+Evolve
+ScienceLogic
+Melio
+GoGuardian
+Poppulo
+May Mobility
+Nature's Bakery
+Precisely
+BlinkRx
+Connecteam
+Roofr
+LendingTree
+Lemonade Insurance Company
+Weinstein Properties
+Renaissance Learning
+Gates Hudson
+Aspire Health Alliance
+Credera
+Locus Robotics
+Truveta
+QuinStreet
+LIGHTFEATHER IO LLC
+ECC
+Quora
+Clover Health
+Harry's
+Hightouch
+Reltio
+Penske Media
+Banyan Software
+Suvoda
+Prolific
+LivePerson
+3Cloud
+Red Canary
+GiveDirectly
+Hippocratic AI
+Tia
+Skilled Wound Care
+Gong.io
+Iron Bow Technologies
+Unite Us
+LA28 Olympic & Paralympic Games
+Harbinger
+Ginkgo Bioworks
+Lattice
+Breeze Airways
+GOAT
+Dashlane
+Veritas Veterinary Partners
+Omnicom Media
+10X Genomics
+Sollis Health
+Ethos Life
+Centerfield
+Cube
+United Vein & Vascular Centers
+Sphere Entertainment Co.
+Chan Zuckerberg Initiative
+Stratolaunch
+San Francisco Campus for Jewish Living
+G-P
+Celigo
+Scale Army Careers
+Savvy Wealth
+Drata
+Contrast Security
+Sunrise ABA
+Altium®
+Together AI
+GlossGenius
+Reformation
+Intrinsic
+Calm
+Businessolver
+Nexamp
+Abarca Health
+JENSEN HUGHES
+Decima International
+Skillsoft
+Berlin Packaging
+Clearway Energy
+Apptronik
+Inspire Medical Systems I
+Whalar
+Four Hands
+Prometheus Real Estate Group
+E Tech Group
+Techstars
+ABBYY
+CHAOS Industries
+Carbon
+Dental365
+Veterinary Practice Partners
+Runway
+Picarro
+Tatari
+Cloudbeds
+SonderMind
+Pie Insurance
+Clearlink
+Civis Analytics
+IVX Health
+Hippo Insurance
+Ultragenyx
+Highspring
+Calendly
+Spring Fertility
+Boys & Girls Clubs of the Peninsula
+Tebra
+Tactile Medical
+Hearts & Science
+Rush Street Interactive
+Fischer Homes
+EPIC Insurance Brokers & Consultants
+Gibson Dunn
+Grindr
+3 Day Blinds
+LTK
+Ridgeline
+Cypress Creek Renewables
+Verifone
+FIGS
+Kairos Power
+SeatGeek
+Cortex
+Skillz
+NetDocuments
+Karbon
+Transcarent
+Vaxcyte
+Paxos
+Pair Team
+Skin Laundry
+Perry Ellis International
+Riskified
+GenScript
+Wrapbook
+Simtra BioPharma Solutions
+Clarity AI
+Khan Academy
+DataCamp
+Secretariat
+Paradigm
+fairlife, LLC
+Zwift
+Kentik
+Misfits Market
+Kins
+Gruve
+American Institutes for Research
+Minitab
+Terran Orbital Corporation
+Topsort
+Impossible Foods
+Nourish
+McAdams
+GeoStabilization International
+Decagon
+Summit Therapeutics, Inc.
+Mark43
+Chowbus
+Acceleration Partners
+Assembled
+Blank Street
+Merchants Fleet
+Govini
+Twin Health
+Barnes & Thornburg LLP
+Kasa Living
+Barkley
+Upgrade, Inc.
+Human Rights Watch
+Built Technologies
+Peregrine
+Hillel International
+Strive Compounding Pharmacy
+Gatik
+CFD Research Corporation
+Brady Services
+Quest Defense
+Optima Medical
+Vivid Seats
+La Senza
+NextRoll
+Partnerize
+Andreessen Horowitz
+DevRev
+Take-Two Interactive
+Liftoff
+Pediatrics Plus
+Olly Olly
+ESO
+Stack Overflow
+Pindrop
+OpenLoop
+Elevations Credit Union
+Tend
+24 Hour Home Care
