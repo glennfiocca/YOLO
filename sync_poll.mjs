@@ -59,32 +59,46 @@ async function tick() {
     )
     return true
   }
-  if (log.status === "RUNNING" && (log.boardsSynced !== lastBoardsSynced || log.status !== lastStatus)) {
-    const target = await fetchActiveBoardsCount()
-    const elapsedMin = (Date.now() - new Date(log.startedAt).getTime()) / 60000
-    const rate = log.boardsSynced / Math.max(elapsedMin, 0.1)
-    const remain = (target - log.boardsSynced) / Math.max(rate, 0.01)
-    console.log(
-      `[${now}] running boards=${log.boardsSynced}/${target} ` +
-      `(failed=${log.boardsFailed}) added=${log.totalAdded} updated=${log.totalUpdated} ` +
-      `elapsedMin=${elapsedMin.toFixed(1)} rate=${rate.toFixed(2)}/min etaMin=${remain.toFixed(0)}`,
-    )
-    lastBoardsSynced = log.boardsSynced
-    lastStatus = log.status
+  if (log.status === "RUNNING") {
+    // SyncLog counters are only written at finalization. Count finished boards
+    // by querying SyncBoardResult — that's the live-progress source of truth.
+    const [done, failed, target] = await Promise.all([
+      db.syncBoardResult.count({ where: { syncLogId: log.id } }),
+      db.syncBoardResult.count({ where: { syncLogId: log.id, status: "FAILURE" } }),
+      fetchActiveBoardsCount(),
+    ])
+    if (done !== lastBoardsSynced) {
+      const elapsedMin = (Date.now() - new Date(log.startedAt).getTime()) / 60000
+      const rate = done / Math.max(elapsedMin, 0.1)
+      const remain = (target - done) / Math.max(rate, 0.01)
+      console.log(
+        `[${now}] running boards=${done}/${target} ` +
+        `(failed=${failed}) ` +
+        `elapsedMin=${elapsedMin.toFixed(1)} rate=${rate.toFixed(2)}/min etaMin=${remain.toFixed(0)}`,
+      )
+      lastBoardsSynced = done
+    }
   }
   return false
 }
 
 async function main() {
   while (true) {
-    const done = await tick()
-    if (done) break
+    try {
+      const done = await tick()
+      if (done) break
+    } catch (err) {
+      // Survive transient DB blips (sync workers can saturate the pool briefly).
+      // Emit a single short line and keep polling.
+      const code = err?.errorCode ?? err?.code ?? "ERR"
+      console.log(`[${new Date().toISOString()}] poll skipped (${code}); retry in ${POLL_INTERVAL_MS/1000}s`)
+    }
     await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS))
   }
-  await db.$disconnect()
+  await db.$disconnect().catch(() => undefined)
 }
 
 main().catch((err) => {
-  console.error("[poll-error]", err)
+  console.error("[poll-fatal]", err?.message ?? err)
   process.exit(1)
 })
